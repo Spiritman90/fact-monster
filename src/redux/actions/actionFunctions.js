@@ -19,3 +19,8 @@ export const getCountriesDetailsError = (error) => ({
   type: ActionTypes.GET_COUNTRIES_DETAILS_ERROR,
   payload: error,
 });
+
+export const countryInput = (data) => ({
+  type: ActionTypes.COUNTRY_INPUT,
+  payload: data,
+});
