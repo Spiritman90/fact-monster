@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const CountryList = () => {
   const allCountries = useSelector((state) => state.allCountriesData);
   const userInput = useSelector((state) => state.countryInput);
+  const regionInput = useSelector((state) => state.region);
 
   return (
     <div className='country'>
@@ -12,6 +13,7 @@ const CountryList = () => {
         .filter((country) =>
           country?.name?.common?.toLowerCase().includes(userInput.toLowerCase())
         )
+        .filter((country) => country?.region.includes(regionInput))
 
         .map((country, index) => (
           <Link to={`/${country.name.common}`} key={index}>

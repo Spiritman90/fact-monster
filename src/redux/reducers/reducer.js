@@ -4,6 +4,7 @@ const countries = {
   allCountriesData: [],
   getCountriesDetails: [],
   countryInput: "",
+  region: "",
   isLoading: false,
   error: null,
   isError: false,
@@ -51,6 +52,9 @@ const reducer = (state = countries, action) => {
 
     case ActionTypes.COUNTRY_INPUT:
       return { ...state, countryInput: payload };
+
+    case ActionTypes.REGION:
+      return { ...state, region: payload };
 
     default:
       return state;

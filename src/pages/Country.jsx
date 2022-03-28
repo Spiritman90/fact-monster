@@ -90,7 +90,10 @@ const Country = () => {
               </p>
               <div className='country__borders'>
                 <p>
-                  Border Countries: <span>{country.borders}</span>
+                  Border Countries:
+                  {Array.from(country.borders).map((item, index) => (
+                    <button key={index}>{item}</button>
+                  ))}
                 </p>
               </div>
             </div>

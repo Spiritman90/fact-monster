@@ -1,11 +1,14 @@
 import React from "react";
 import { BsMoon } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <nav className='navbar'>
       <div className='navbar__logo'>
-        <h3 className='navbar__title'>Where in the world?</h3>
+        <Link to='/'>
+          <h3 className='navbar__title'>Where in the world?</h3>
+        </Link>
       </div>
 
       <div className='navbar__dark-mode'>
