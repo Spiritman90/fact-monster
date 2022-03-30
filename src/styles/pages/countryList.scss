@@ -38,6 +38,14 @@
   }
 }
 
+.border {
+  margin-left: 1rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  margin-left: 0.9rem;
+}
+
 @media screen and (max-width: 768px) {
   .country {
     display: grid;

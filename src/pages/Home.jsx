@@ -20,7 +20,6 @@ const Home = () => {
       try {
         const response = await axios.get(url);
         dispatch(getAllCountriesSuccess(response?.data));
-        console.log(response);
       } catch (error) {
         dispatch(getAllCountriesError(error.message));
         console.log(error.message);

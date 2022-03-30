@@ -25,7 +25,6 @@ const Filter = () => {
     dispatch({ type: ActionTypes.REGION, payload: regionSelect });
   }, [regionSelect, dispatch]);
 
-  console.log(regionSelect);
   return (
     <div className='search'>
       <form className='search__form' onSubmit={handleSubmit}>

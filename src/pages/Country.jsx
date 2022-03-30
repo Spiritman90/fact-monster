@@ -20,7 +20,6 @@ const Country = () => {
       try {
         const response = await axios.get(url);
         dispatch(getCountriesDetail(response?.data));
-        console.log(response);
       } catch (error) {
         dispatch(getCountriesDetailsError(error.message));
         console.log(error.message);
@@ -99,7 +98,7 @@ const Country = () => {
                 </div>
               </div>
               <div className='country__borders'>
-                <p>Border Countries: </p>
+                <span className='border'>Border Countries: &nbsp; </span>
                 {!country?.borders ? (
                   <span> Country is an Island, no borders</span>
                 ) : (
