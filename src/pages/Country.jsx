@@ -99,18 +99,18 @@ const Country = () => {
                 </div>
               </div>
               <div className='country__borders'>
-                <p>
-                  Border Countries:
-                  {country.borders.length === 0 ? (
-                    <span> &nbsp;Country is an Island, no borders</span>
-                  ) : (
-                    Array.from(country.borders).map((item, index) => (
+                <p>Border Countries: </p>
+                {!country?.borders ? (
+                  <span> Country is an Island, no borders</span>
+                ) : (
+                  <div className='border__buttons'>
+                    {country?.borders?.map((item, index) => (
                       <button className='buttons' key={index}>
                         {item}
                       </button>
-                    ))
-                  )}
-                </p>
+                    ))}{" "}
+                  </div>
+                )}
               </div>
             </div>
           </div>
