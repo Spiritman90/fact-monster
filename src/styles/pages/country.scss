@@ -1,13 +1,18 @@
+.profile {
+  background-color: var(--ui-background);
+  padding: 5rem 0;
+}
 .country__details {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  max-width: 1100px;
-  margin: 5rem auto;
+  grid-template-columns: 2fr 2fr;
+  padding: 5rem 5rem 0 5rem;
   gap: 2rem;
+  align-content: center;
 
-  img {
-    width: 30rem;
-    height: 23rem;
+  .country__name h2 {
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    margin-left: 0.5rem;
   }
 }
 
@@ -15,7 +20,7 @@
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.1875rem;
-  margin: 0.5rem;
+  margin: 0.6rem;
 
   span {
     font-weight: 300;
@@ -24,8 +29,7 @@
 
 .back__btn {
   padding: 0.25rem 2.5rem 0.25rem 2rem;
-  margin-top: 3rem;
-  margin-left: 6rem;
+  margin-left: 5rem;
   width: 7rem;
   border: none;
   outline: none;
@@ -33,13 +37,51 @@
   border-radius: 0.25rem;
   display: flex;
   align-items: center;
-  background-color: $light-mode-background;
+  background-color: var(--ui-element);
   height: 2rem;
   font-family: "Nunito Sans", sans-serif;
 }
 
-.borders {
+.country__info {
   display: flex;
-  gap: 1.3rem;
-  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.country__borders {
+  margin-top: 2rem;
+  display: flex;
+  & .buttons {
+    margin-left: 1rem;
+    box-shadow: 0 0 6px 0 #0000001f;
+    background-color: var(--ui-element);
+    padding: 4px 0;
+    width: 5rem;
+    border: none;
+    outline: none;
+    border-radius: 0.25em;
+    font-weight: 300;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .country__details {
+    display: flex;
+    flex-direction: column;
+    margin-left: -4rem;
+  }
+
+  .back__btn {
+    margin-top: -3rem;
+    margin-left: 1rem;
+  }
+
+  .country__info {
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: flex-start;
+  }
+
+  .buttons {
+    margin-right: 3rem;
+  }
 }

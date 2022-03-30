@@ -30,7 +30,7 @@ const Country = () => {
   }, [dispatch, url]);
 
   const oneCountry = useSelector((state) => state.getCountriesdetails);
-  console.log(oneCountry);
+  const oneCountryError = useSelector((state) => state.error);
 
   const navigate = useNavigate();
 
@@ -39,12 +39,13 @@ const Country = () => {
   };
 
   return (
-    <>
+    <section className='profile'>
       <button className='back__btn' onClick={handleClick}>
         <HiOutlineArrowNarrowLeft />
         &nbsp; &nbsp;
         <span>Back</span>
       </button>
+      {oneCountryError && <p>{oneCountryError}</p>}
       {oneCountry &&
         oneCountry.map((country, index) => (
           <div className='country__details' key={index}>
@@ -53,53 +54,68 @@ const Country = () => {
             </div>
 
             <div className='country__name'>
-              <h2>{country.name}</h2>
-              <p>
-                Native name: <span>{country.nativeName}</span>
-              </p>
-              <p>
-                Population:{" "}
-                <span>
-                  {new Intl.NumberFormat("us-US").format(country.population)}
-                </span>
-              </p>
-              <p>
-                Region: <span>{country.region}</span>
-              </p>
-              <p>
-                Sub Region: <span>{country.subregion}</span>
-              </p>
-              <p>
-                Capital: <span>{country.capital}</span>
-              </p>
-            </div>
+              <div className='country__common'>
+                <h2>{country.name}</h2>
+              </div>
 
-            <div className='country__domain'>
-              <p>
-                Top Level Domain: <span>{country.topLevelDomain}</span>
-              </p>
+              <div className='country__info'>
+                <div className='country__area'>
+                  <p>
+                    Native name: <span>{country.nativeName}</span>
+                  </p>
+                  <p>
+                    Population:{" "}
+                    <span>
+                      {new Intl.NumberFormat("us-US").format(
+                        country.population
+                      )}
+                    </span>
+                  </p>
+                  <p>
+                    Region: <span>{country.region}</span>
+                  </p>
+                  <p>
+                    Sub Region: <span>{country.subregion}</span>
+                  </p>
+                  <p>
+                    Capital: <span>{country.capital}</span>
+                  </p>
+                </div>
 
-              <p>
-                Currencies: <span>{country.currencies[0].name}</span>
-              </p>
-              <p>
-                Languages:{" "}
-                <span className='languages'>
-                  {country?.languages.map((lang) => lang.name).join(", ")}
-                </span>
-              </p>
+                <div className='country__domain'>
+                  <p>
+                    Top Level Domain: <span>{country.topLevelDomain}</span>
+                  </p>
+
+                  <p>
+                    Currencies: <span>{country.currencies[0].name}</span>
+                  </p>
+                  <p>
+                    Languages:{" "}
+                    <span className='languages'>
+                      {country?.languages.map((lang) => lang.name).join(", ")}
+                    </span>
+                  </p>
+                </div>
+              </div>
               <div className='country__borders'>
                 <p>
                   Border Countries:
-                  {Array.from(country.borders).map((item, index) => (
-                    <button key={index}>{item}</button>
-                  ))}
+                  {country.borders.length === 0 ? (
+                    <span> &nbsp;Country is an Island, no borders</span>
+                  ) : (
+                    Array.from(country.borders).map((item, index) => (
+                      <button className='buttons' key={index}>
+                        {item}
+                      </button>
+                    ))
+                  )}
                 </p>
               </div>
             </div>
           </div>
         ))}
-    </>
+    </section>
   );
 };
 

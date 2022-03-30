@@ -34,10 +34,23 @@ const Home = () => {
   const allCountriesLoading = useSelector((state) => state.isLoading);
   return (
     <>
-      <Filter />
-      {allCountriesError && <p>{allCountriesError}</p>}
-      {allCountriesLoading && <h1>Loading...</h1>}
-      {allCountries && <CountryList countries={allCountries} />}
+      <section
+        className='home'
+        style={{
+          height: allCountriesLoading ? "90vh" : "unset",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <Filter />
+        {allCountriesError && <p>{allCountriesError}</p>}
+        {allCountriesLoading && (
+          <h1 style={{ alignSelf: "center", justifySelf: "center" }}>
+            Loading...
+          </h1>
+        )}
+        {allCountries && <CountryList countries={allCountries} />}
+      </section>
     </>
   );
 };

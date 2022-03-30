@@ -5,8 +5,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: $light-mode-text hsl(200, 15%, 8%);
-  background-color: $light-mode-background;
+  color: var(--text-color);
+  // background-color: var(--ui-background);
 }
 
 a {
@@ -18,8 +18,8 @@ img {
   max-width: 100%;
 }
 
+@import "./colors.scss";
 @import "../components/navbar.scss";
-@import "../components/footer.scss";
 @import "../pages/countryList.scss";
 @import "../components/filter.scss";
 @import "../pages/country.scss";

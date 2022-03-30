@@ -2,19 +2,40 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Country from "./pages/Country";
+import { useEffect, useState } from "react";
 
 function App() {
-  return (
-    <div>
-      <BrowserRouter>
-        <Navbar />
+  const getTheme = !localStorage.getItem("theme")
+    ? true
+    : JSON.parse(localStorage.getItem("theme"));
+  const [toggle, setToggle] = useState(getTheme);
 
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/:name' element={<Country />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+  const handleClick = () => {
+    setToggle(!toggle);
+  };
+
+  useEffect(() => {
+    if (!localStorage.getItem("theme")) {
+      localStorage.setItem("theme", true);
+    }
+  }, []);
+
+  useEffect(() => {
+    toggle
+      ? document.documentElement.setAttribute("data-theme", "light")
+      : document.documentElement.removeAttribute("data-theme", "light");
+    localStorage.setItem("theme", toggle);
+  }, [toggle]);
+
+  return (
+    <BrowserRouter>
+      <Navbar handleClick={handleClick} />
+
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/:name' element={<Country />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

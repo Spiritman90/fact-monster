@@ -2,5 +2,20 @@ $dark-blue: hsl(209, 23%, 22%);
 $dark-mode: hsl(207, 26%, 17%);
 $light-mode-text: hsl(200, 15%, 8%);
 $light-mode-input: hsl(0, 0%, 52%);
-$light-mode-background: hsl(0, 0%, 98%);
+// var(--ui-background): hsl(0, 0%, 98%);
 $light-dark-elements: hsl(0, 0%, 100%);
+
+html[data-theme="light"] {
+  --text-color: #111517;
+  --input-element: #858585;
+  --ui-background: #fafafa;
+  --ui-element: #ffffff;
+}
+
+html {
+  transition: all 10s;
+  --text-color: #ffffff;
+  --input-element: #ffffff;
+  --ui-background: #202c37;
+  --ui-element: #2b3945;
+}

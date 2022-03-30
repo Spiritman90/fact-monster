@@ -2,7 +2,7 @@ import React from "react";
 import { BsMoon } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ handleClick }) {
   return (
     <nav className='navbar'>
       <div className='navbar__logo'>
@@ -13,7 +13,9 @@ function Navbar() {
 
       <div className='navbar__dark-mode'>
         <BsMoon />
-        <button className='navbar__button'>Dark Mode</button>
+        <button className='navbar__button' onClick={handleClick}>
+          Dark Mode
+        </button>
       </div>
     </nav>
   );

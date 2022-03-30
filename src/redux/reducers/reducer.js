@@ -5,6 +5,7 @@ const countries = {
   getCountriesDetails: [],
   countryInput: "",
   region: "",
+  isdarkMode: !!JSON.parse(localStorage.getItem("darkmode")),
   isLoading: false,
   error: null,
   isError: false,
@@ -48,6 +49,12 @@ const reducer = (state = countries, action) => {
         isError: true,
         error: payload,
         getCountriesDetails: [],
+      };
+
+    case ActionTypes.DARK_MODE:
+      return {
+        ...state,
+        isdarkMode: action.payload,
       };
 
     case ActionTypes.COUNTRY_INPUT:
