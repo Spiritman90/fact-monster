@@ -1,10 +1,11 @@
 .home {
-  background-color: var(--ui-background);
+  // background-color: var(--ui-background);
 }
 .country {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 4.6875rem;
+  // gap: 4.6875rem;
+  gap: 2rem;
   margin-top: 3rem;
   padding-bottom: 3rem;
   margin: 0 5rem;
@@ -15,6 +16,7 @@
     border-radius: 0.5rem;
     // width: 20rem;
     background-color: var(--ui-element);
+    height: 21rem;
 
     h4 {
       margin: 0.9rem;

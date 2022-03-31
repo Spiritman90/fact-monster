@@ -29,12 +29,14 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar handleClick={handleClick} />
+      <section className='backColor'>
+        <Navbar handleClick={handleClick} />
 
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/:name' element={<Country />} />
-      </Routes>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/:name' element={<Country />} />
+        </Routes>
+      </section>
     </BrowserRouter>
   );
 }

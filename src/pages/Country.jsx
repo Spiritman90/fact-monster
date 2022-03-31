@@ -12,6 +12,12 @@ import { HiOutlineArrowNarrowLeft } from "react-icons/hi";
 
 const Country = () => {
   const { name } = useParams();
+  const oneCountry = useSelector((state) => state.getCountriesdetails);
+  const oneCountryError = useSelector((state) => state.error);
+  const allCountries = useSelector((state) => state.allCountriesData);
+  let allCountriesLoading = useSelector((state) => state.isLoading);
+
+  const user = useSelector((state) => state.countryInput);
   const url = `https://restcountries.com/v2/name/${name}`;
   const dispatch = useDispatch();
   useEffect(() => {
@@ -20,6 +26,7 @@ const Country = () => {
       try {
         const response = await axios.get(url);
         dispatch(getCountriesDetail(response?.data));
+        console.log(response);
       } catch (error) {
         dispatch(getCountriesDetailsError(error.message));
         console.log(error.message);
@@ -28,13 +35,11 @@ const Country = () => {
     dispatch(countryDetails);
   }, [dispatch, url]);
 
-  const oneCountry = useSelector((state) => state.getCountriesdetails);
-  const oneCountryError = useSelector((state) => state.error);
-
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate("/");
+    // let loading = allCountries ? !allCountriesLoading : "";
   };
 
   return (

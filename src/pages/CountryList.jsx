@@ -6,6 +6,7 @@ const CountryList = () => {
   const allCountries = useSelector((state) => state.allCountriesData);
   const userInput = useSelector((state) => state.countryInput);
   const regionInput = useSelector((state) => state.region);
+  console.log(userInput);
 
   return (
     <div className='country'>

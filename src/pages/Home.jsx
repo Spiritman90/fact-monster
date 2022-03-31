@@ -14,6 +14,10 @@ const url = "https://restcountries.com/v3.1/all";
 
 const Home = () => {
   const dispatch = useDispatch();
+  const allCountries = useSelector((state) => state.allCountriesData);
+  const allCountriesError = useSelector((state) => state.error);
+  const allCountriesLoading = useSelector((state) => state.isLoading);
+
   useEffect(() => {
     const countrydata = async (dispatch) => {
       dispatch({ type: ActionTypes.FETCH_DATA_START });
@@ -28,9 +32,6 @@ const Home = () => {
     dispatch(countrydata);
   }, [dispatch]);
 
-  const allCountries = useSelector((state) => state.allCountriesData);
-  const allCountriesError = useSelector((state) => state.error);
-  const allCountriesLoading = useSelector((state) => state.isLoading);
   return (
     <>
       <section
@@ -42,13 +43,17 @@ const Home = () => {
         }}
       >
         <Filter />
-        {allCountriesError && <p>{allCountriesError}</p>}
+        {allCountriesError && !allCountriesLoading && (
+          <p>{allCountriesError}</p>
+        )}
         {allCountriesLoading && (
           <h1 style={{ alignSelf: "center", justifySelf: "center" }}>
             Loading...
           </h1>
         )}
-        {allCountries && <CountryList countries={allCountries} />}
+        {allCountries && !allCountriesLoading && (
+          <CountryList countries={allCountries} />
+        )}
       </section>
     </>
   );

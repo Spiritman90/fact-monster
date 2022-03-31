@@ -1,20 +1,16 @@
 import { IoIosSearch } from "react-icons/io";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router";
 import { countryInput } from "../redux/actions/actionFunctions";
 import { useState, useEffect } from "react";
 import { ActionTypes } from "../redux/constants/actionTypes";
 
 const Filter = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const userInput = useSelector((state) => state.countryInput);
   const [regionSelect, setRegionSelect] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    navigate(`/country`);
   };
 
   const handleOnChange = (e) => {
@@ -49,7 +45,7 @@ const Filter = () => {
             setRegionSelect(e.target.value);
           }}
         >
-          <option value='Filter by region'>Filter by Region</option>
+          <option value=''>Filter by Region</option>
           <option value='Africa'>Africa</option>
           <option value='Americas'>Americas</option>
           <option value='Asia'>Asia</option>

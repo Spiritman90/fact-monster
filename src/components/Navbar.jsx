@@ -12,9 +12,9 @@ function Navbar({ handleClick }) {
       </div>
 
       <div className='navbar__dark-mode'>
-        <BsMoon />
         <button className='navbar__button' onClick={handleClick}>
-          Dark Mode
+          <BsMoon />
+          <span>Dark Mode</span>
         </button>
       </div>
     </nav>

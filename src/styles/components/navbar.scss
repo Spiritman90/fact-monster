@@ -28,12 +28,15 @@
     font-weight: 600;
     line-height: 1.1875rem;
     cursor: pointer;
+
+    display: flex;
+    column-gap: 0.5rem;
+    align-items: center;
   }
 }
 
 @media screen and (max-width: 500px) {
   .navbar {
-    // padding: 1.5rem 0rem;
     margin-left: -5rem;
     font-size: 0.9rem;
 

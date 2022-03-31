@@ -6,7 +6,6 @@
   padding: 0;
   box-sizing: border-box;
   color: var(--text-color);
-  // background-color: var(--ui-background);
 }
 
 a {
@@ -23,3 +22,7 @@ img {
 @import "../pages/countryList.scss";
 @import "../components/filter.scss";
 @import "../pages/country.scss";
+
+.backColor {
+  background-color: var(--ui-background);
+}
