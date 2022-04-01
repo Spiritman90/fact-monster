@@ -64,6 +64,29 @@
   }
 }
 
+@media screen and (max-width: 1140px) {
+  .country__details {
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+  }
+}
+
+// @media screen and (max-width: 540px) {
+//   .country__details {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 1.5rem;
+//     justify-content: flex-start;
+//   }
+
+//   .country__info {
+//     flex-direction: column;
+//     gap: 1.5rem;
+//     justify-content: flex-start;
+//   }
+// }
+
 @media screen and (max-width: 500px) {
   .country__details {
     display: flex;

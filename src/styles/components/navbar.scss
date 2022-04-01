@@ -35,6 +35,28 @@
   }
 }
 
+// @media screen and (max-width: 540px) {
+//   .navbar {
+//     margin-left: -5rem;
+//     font-size: 0.9rem;
+
+//     &__dark-mode {
+//       margin-right: -1rem;
+//     }
+//   }
+// }
+
+@media screen and (min-width: 501px) and (max-width: 540px) {
+  .navbar {
+    margin-left: -5rem;
+    font-size: 0.9rem;
+
+    &__dark-mode {
+      margin-right: 1rem;
+    }
+  }
+}
+
 @media screen and (max-width: 500px) {
   .navbar {
     margin-left: -5rem;

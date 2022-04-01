@@ -4,17 +4,23 @@ import { countryInput } from "../redux/actions/actionFunctions";
 import { useState, useEffect } from "react";
 import { ActionTypes } from "../redux/constants/actionTypes";
 import { RiArrowDownSLine } from "react-icons/ri";
+import { useNavigate } from "react-router";
 
 const Filter = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const userInput = useSelector((state) => state.countryInput);
   const [regionSelect, setRegionSelect] = useState("");
+  const [country, setCountry] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate(`/${country}`);
   };
 
   const handleOnChange = (e) => {
+    setCountry(e.target.value);
     dispatch(countryInput(e.target.value));
   };
 

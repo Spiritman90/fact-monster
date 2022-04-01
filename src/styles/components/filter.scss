@@ -58,6 +58,42 @@
   }
 }
 
+// @media screen and (max-width: 540px) {
+//   .search {
+//     flex-direction: column;
+//     gap: 3rem;
+
+//     &__form input {
+//       margin-right: 27rem;
+//       width: 100%;
+//     }
+
+//     .filter {
+//       margin-right: 18rem;
+//       margin-bottom: 2rem;
+//     }
+//   }
+// }
+
+@media screen and (min-width: 501px) and (max-width: 540px) {
+  .search {
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+
+    .filter {
+      margin-right: 18rem;
+      margin-bottom: 1rem;
+    }
+
+    &__form input {
+      margin-right: 6rem;
+      width: 25rem;
+    }
+  }
+}
+
 @media screen and (max-width: 500px) {
   .search {
     flex-direction: column;

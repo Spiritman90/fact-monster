@@ -92,7 +92,7 @@ const Country = () => {
                   </p>
 
                   <p>
-                    Currencies: <span>{country.currencies[0].name}</span>
+                    Currencies: <span>{country?.currencies?.[0]?.name}</span>
                   </p>
                   <p>
                     Languages:{" "}
