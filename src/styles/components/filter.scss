@@ -44,11 +44,17 @@
     width: 12rem;
     outline: none;
     cursor: pointer;
+    appearance: none;
 
     &option {
       font-size: 0.875rem;
       font-weight: 600;
     }
+  }
+  .arrow {
+    position: absolute;
+    right: 1.2rem;
+    top: 0.9rem;
   }
 }
 
