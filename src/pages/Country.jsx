@@ -14,10 +14,7 @@ const Country = () => {
   const { name } = useParams();
   const oneCountry = useSelector((state) => state.getCountriesdetails);
   const oneCountryError = useSelector((state) => state.error);
-  const allCountries = useSelector((state) => state.allCountriesData);
-  let allCountriesLoading = useSelector((state) => state.isLoading);
 
-  const user = useSelector((state) => state.countryInput);
   const url = `https://restcountries.com/v2/name/${name}`;
   const dispatch = useDispatch();
   useEffect(() => {
